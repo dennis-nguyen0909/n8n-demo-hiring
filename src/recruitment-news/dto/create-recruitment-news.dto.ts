@@ -26,13 +26,13 @@ export class CreateRecruitmentNewsDto {
 
   @IsArray()
   @IsString({ each: true })
-  @IsNotEmpty()
-  requirements: string[];
+  @IsOptional()
+  requirements?: string[];
 
   @IsArray()
   @IsString({ each: true })
-  @IsNotEmpty()
-  benefits: string[];
+  @IsOptional()
+  benefits?: string[];
 
   @IsString()
   @IsNotEmpty()
@@ -52,8 +52,8 @@ export class CreateRecruitmentNewsDto {
 
   @IsArray()
   @IsString({ each: true })
-  @IsNotEmpty()
-  skills: string[];
+  @IsOptional()
+  skills?: string[];
 
   @IsDateString()
   @IsNotEmpty()
@@ -63,11 +63,10 @@ export class CreateRecruitmentNewsDto {
   @IsNotEmpty()
   companyLogo: string;
 
-  @IsEmail()
-  @IsNotEmpty()
+  @IsOptional()
   contactEmail: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   contactPhone: string;
 
   @IsDateString()
